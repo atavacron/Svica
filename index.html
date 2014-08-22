@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+
+<html>
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/less" href="css/svica.less" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/nv.v2.d3.css" media="screen" />
+
+
+<link rel="stylesheet" type="text/css" href="css/nanoscroller.css" media="screen" />
+
+<link href='https://api.tiles.mapbox.com/mapbox.js/v2.0.1/mapbox.css' rel='stylesheet' />
+
+
+
+
+        <title>Svica</title>
+
+
+
+
+
+<body>
+<aside id="sidebar" class="nano">
+  <div class="nano-content">
+    <div class="logo-container"><span class="logo glyphicon glyphicon-plus"></span>Svica</div>
+    <menu class="menu-segment">
+      <ul>
+        <li><a href="#">News<span> </span></a></li>
+          <li class="active"><a href="#">Markets</a></li>
+           <li><a href="#">Bonds and Fixed Income</a></li>
+        <li><a href="#">Central Bank and Monetary</a></li>
+        <li><a href="#">Government and Fiscal</a></li>
+
+
+        <li><a href="https://github.com/dvdk23/svica">Git Repo</a></li>
+
+
+      </ul>
+    </menu>
+
+    <div class="bottom-padding"></div>
+  </div>
+</aside>
+<main id="main">
+  <div class="overlay"></div>
+  <header class="header">
+
+    <h1 class="page-title">Markets<a class="sidebar-toggle-btn trigger-toggle-sidebar"><span class="line"></span><span class="line"></span><span class="line"></span><span class="line line-angle1"></span><span class="line line-angle2"></span></a><a><span class="icon glyphicon glyphicon-stats"></span></a></h1>
+
+  </header>
+  <div id="main-nano-wrapper" class="nano">
+    <div class="nano-content">
+      <ul class="infoside-list">
+
+        <li class="unread">
+
+    <div class="row1">
+  <ul>
+    <li><button type="button">EUR</button> <button type="button" id='1' onclick="go(this.id)">.1500</button></li>
+    <li><button type="button">JPN</button><button type="button" id='2' onclick="go(this.id)">0.00</button></li>
+    <li><button type="button">CHN</button><button type="button" id='3' onclick="go(this.id)">6.00 </button></li>
+    <li><button type="button">GB</button><button type="button" id='4' onclick="go(this.id)">.500</button></li>
+</ul></div>
+
+<div class='row1'>
+   <ul>
+    <li><button type="button">CAN</button><button type="button" id='5' onclick="go(this.id)">1.000</button></li>
+    <li><button type="button">KOR</button><button type="button" id='6' onclick="go(this.id)">2.250</button></li>
+    <li><button type="button">AUS</button><button type="button" id='7' onclick="go(this.id)"> 2.500</button></li>
+    <li><button type="button">NZ</button><button type="button" id='8' onclick="go(this.id)">3.250</button></li>
+
+    </ul>
+    </div>
+
+ <div class='row1'>
+   <ul>
+    <li><button type="button">SWZ</button><button type="button" id='9' onclick="go(this.id)">0.000</button></li>
+    <li><button type="button">NOR</button><button type="button" id='10' onclick="go(this.id)">1.500</button></li>
+    <li><button type="button">SWE</button><button type="button" id='11' onclick="go(this.id)">.2500</button></li>
+    <li><button type="button">SNG</button><button type="button" id='12' onclick="go(this.id)">0.08</button></li>
+
+    </ul>
+    </div>
+
+   <div class='row1'>
+   <ul>
+    <li><button type="button">HK</button><button type="button" id='13' onclick="go(this.id)">.500</button></li>
+    <li><button type="button">EUR</button><button type="button" id='14' onclick="go(this.id)">.1500</button></li>
+    <li><button type="button">IND</button><button type="button" id='15' onclick="go(this.id)">8.000</button></li>
+    <li><button type="button">RUS</button><button type="button" id='16' onclick="go(this.id)">8.000</button></li>
+
+    </ul>
+    </div>
+
+   <div class='row1'>
+   <ul>
+    <li><button type="button">MEX</button><button type="button" id='17' onclick="go(this.id)">3.000</button></li>
+    <li><button type="button">TRK</button><button type="button" id='18' onclick="go(this.id)">8.250</button></li>
+    <li><button type="button">UAE</button><button type="button" id='19' onclick="go(this.id)">1.000</button></li>
+    <li><button type="button">BRZ</button><button type="button" id='20' onclick="go(this.id)">11.00</button></li>
+
+    </ul>
+    </div>
+
+
+       </li>
+      </ul>
+
+
+</div></div></main>
+<div id="infoside">
+
+  <div id="infoside-nano-wrapper" class="nano">
+    <div class="nano-content">
+
+
+
+
+
+
+
+    <div class="header"><div id="clock"></div>
+    <h1 class="page-title"> <a class="icon -icon glyphicon glyphicon-plus trigger-infoside-close"></a></h1>
+      </div><article>
+<div class="ma"><p id="p2">>>>Arbitrage Path</p><ul class="path"></ul></div>
+
+
+                 <section id="pattern" class="pattern">
+    <ul class="grid">
+      <li>
+  <div class="m_brief">
+    </div>
+      </li>
+      <li><div class="spark">
+
+
+             </div>
+
+
+      </li>
+      <li>
+        <div class="db">
+        </div>
+      </li>
+
+      <li>
+        <div class="cs">
+
+        </div>
+      </li>
+      <li> <div id="chart"><p id="p2">>>>Volatilty</p>
+<svg></svg>
+
+        </div>
+
+      </li>
+      <li>
+<div class="rss-widget"><p id="p2">>>>News</p><ul></ul></div>
+      </li>
+
+      <li>
+
+        </li>
+    <li>
+        <div>
+</div>
+
+      </li>
+      <li>
+
+      </li>
+    </ul>
+  </section>
+
+<div class="stretch"></div>
+
+</article>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write("<script src='js/jquery-1.9.1.min.js'><\/script>")</script>
+
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.0/less.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/json2/20130526/json2.min.js"></script>
+
+
+
+<script src='https://api.tiles.mapbox.com/mapbox.js/plugins/arc.js/v0.1.0/arc.js'></script>
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nanoscroller/0.8.0/jquery.nanoscroller.min.js"></script>
+
+<script type="text/javascript" src="js/svica.js"></script>
+<script type="text/javascript" src="js/d3.v3.min.js"></script>
+
+<script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.3/mapbox.js'></script>
+<script src='https://api.tiles.mapbox.com/mapbox.js/plugins/arc.js/v0.1.0/arc.js'></script>
+<script type="text/javascript" src="js/3.4.11-d3.min.js"></script>
+<script type="text/javascript" src="js/d3.csv.js"></script>
+<script type="text/javascript" src="js/nv.d3.js"></script>
+
+
+
+
+
+
+</html>
+
+
+
+
+
+
