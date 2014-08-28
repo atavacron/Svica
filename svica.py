@@ -13,7 +13,7 @@ print " "
 print " "
 print " "
 print " "
-
+# Inserts new (USD_r[N])node every iteration
 def iterate(N,url):
     r=["C%22AEDUSD%22", "C%22EURUSD%22", "C%22JPYUSD%22", "C%22CNYUSD%22", "C%22GBPUSD%22", "C%22CADUSD%22", "C%22KRWUSD%22", "C%22AUDUSD%22", "C%22NZDUSD%22", "C%22CHFUSD%22", "C%22NOKUSD%22", "C%22SEKUSD%22", "C%22SGDUSD%22", "C%22HKDUSD%22", "C%22CNYUSD%22", "C%22INRUSD%22", "C%22RUBUSD%22", "C%22MXNUSD%22", "C%22TRYUSD%22", "C%22AEDUSD%22","C%22BRLUSD%22"]
     N=N
@@ -27,7 +27,7 @@ def iterate(N,url):
         sourceCaseMatch = re.findall(match,url_2)[0]
         url = url_2.replace(sourceCaseMatch, replace)
     return url
-    
+# Parses, modifies and serializes json data for Networkx
 def yql(url):
     rates = urllib2.urlopen(url, data="None" ).read()
     y=json.loads(rates)
@@ -36,25 +36,25 @@ def yql(url):
     q = dict(((x['Name'].replace(" to ", "_")), x['Rate']) for x in q)
     with open('rates_3.json',"w") as z:
         m=json.dump(q,z)
-
+# Reads the json
 def query(z):
     r_r=open("rates_3.json").read()
     r_r=json.loads(r_r)
     return r_r
-
+# Creates the graph and adds the edge weights for BF algo
 def NX_g(node_pnts):
     nxdg = nx.DiGraph()
     nxdg.add_weighted_edges_from(node_pnts)
     return nxdg
-
+# Runs Bellman-Ford algo. Note this uses a modified Networkx Weighted Graph script that returns the negative cycle.
 def svica(digraph, firstFX="USD",weight='weight'):
     P = nx.bellman_ford(digraph, firstFX,weight='weight', return_negative_cycle=True)
     return P
-
+# Adds the rates to the respective node for later computation
 def pnode(rates):
     rlist = rates[0].split("_")
     return (rlist[0], rlist[1], -1.0 * math.log(float(rates[1])))
-
+#Computes the best path of fx swaps
 def work(N,P, g, firstFX="USD",weight='weight'):
     touched = set(firstFX)
     net_g=1
@@ -87,7 +87,7 @@ def work(N,P, g, firstFX="USD",weight='weight'):
     
     pth=pth[::-1]
     return netp, pth
-
+# Calls the previos functions 21 times and dumps the information.
 def controller(work,pnode,svica,NX_g,yql,iterate,query):
     mydic={}
     mylst=[]
@@ -128,7 +128,7 @@ def controller(work,pnode,svica,NX_g,yql,iterate,query):
         A=work(N,P, nxdg)
 
     return mydic, netdic
-
+# Serializes and dumps the info as needed.
 def index(controller): 
     c=controller(work,pnode,svica,NX_g,yql,iterate,query)
     spath=c[0]
