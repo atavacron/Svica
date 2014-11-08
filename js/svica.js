@@ -28,7 +28,7 @@ function path(b) {
         return;
       }
 
-      setTimeout(loops, 3000);
+      setTimeout(loops, 2000);
     };
 
     loops();
@@ -100,7 +100,7 @@ function mapz(b) {
         }), {
           color: '#ffcc00',
           weight: 1,
-          opacity: 0.5
+          opacity: 1
         })
         .addTo(map);
       var totalLength = newLine._path.getTotalLength();

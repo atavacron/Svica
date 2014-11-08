@@ -49,7 +49,7 @@ transition {
 
 body {
 
-  background: url('http://bit.ly/1n4yAFl') no-repeat;
+  background: url('https://s3-us-west-2.amazonaws.com/svica.markets.com/images/1m0Ndbk.jpg') no-repeat;
   background-size: 1450px auto;
 
   font-family: @std-font;
@@ -61,16 +61,11 @@ span {
   font: @std-font;
 }
 
-#p2 {
-  font-weight: 100;
-  font-size:1.5em;
-  font: lighter, 2em "Helvetica Neue" sans-serif;
+.p2 {
+  font:  lighter "Helvetica Neue" sans-serif;font-size: 1.2em;
   line-height: 1.1;
   text-align: left;
-  text-transform: uppercase;
   letter-spacing: 4px;
-  color: green;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
 #chart {
@@ -111,7 +106,6 @@ span {
   padding: .51em;
   margin-bottom: .125em;
   display: block;
-  list-style: none;
   text-transform: uppercase;
   -webkit-animation: rolldown 3s 1;
   -webkit-animation-fill-mode: forwards;
@@ -135,10 +129,9 @@ span {
 }
 
 .rss-widget ul li a .blog-item-title {
-  font-size: .8em;
+  font-size: 1em;
   line-height: .9em;
   padding: 1px;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
   position: float;
   text-align: center;
 
@@ -205,6 +198,8 @@ svg {
 }
 
 .row1 {
+    background: rgba(0, 0, 0, .4);
+
   padding: 0;
   height: 100px;
   width: 900px;
@@ -212,7 +207,7 @@ svg {
   overflow: hidden;
   margin: 40px auto;
   text-align: middle;
-  
+
 
 }
 
@@ -231,8 +226,8 @@ svg {
 
   border-style: none;
   display: block;
-  background: rgba(0, 0, 0, 0);
-  color: @color-orange;
+  color: @color-pomegranate;
+  background: none;
   height: 100px;
   width: 200px;
 
@@ -340,6 +335,7 @@ a {
         color: #fff;
 
         .icon {
+          color: @color-pomegranate;
           float: right;
         }
       }
@@ -537,22 +533,19 @@ a {
   position: fixed;
   top: 0;
   bottom: 0;
-
   z-index: 5;
   transform: translateX(200%);
   transition-duration: .5s;
   padding: 10px auto;
-  background-image: url('http://bit.ly/1eoYm5x');
 
-  background-size: cover;
-  background-repeat: no-repeat;
-
+  background: rgba(255,255,255,1);
   color: black;
   font: lighter 1.5em "Helvetica Neue" sans-serif;
-  font-size:1.2em;
   font-weight: 100;
   .page-title {
-    font-size: 1.5em;
+      text-transform: uppercase;
+
+    font-size: 2em;
   }
   .path {
     font: lighter "Helvetica Neue" sans-serif;
@@ -605,27 +598,17 @@ a {
     margin: none;
 
   }
-  article {
-    position: relative;
-    height: auto;
-    padding: auto;
-    width: 90%;
-    margin: auto;
-    background: rgba(255, 255, 255, .3);
 
-    box-shadow: 8px 8px 8px 16px rgba(0, 0, 0, 0.3);
-
-  }
   .ma {
     height: auto;
     padding: 0.5em;
-    width: 90%;
+    width: 70%;
     margin: auto;
     position: relative;
 
   }
   .stretch {
-    height: 4000px;
+    height: auto;
   }
   .show-infoside & {
     transition-duration: 2s;
@@ -639,8 +622,12 @@ a {
     .page-title {
       display: block;
       float: none;
+        text-transform: uppercase;
+
       margin: auto;
       padding: auto;
+      font-size:2em;
+
 
       letter-spacing: 8px;
       .icon {
@@ -694,7 +681,7 @@ a {
 }
 
 .cs {
-  #p2 {
+  .p2 {
     font-weight: 200;
     color: navy;
     width: auto;
@@ -705,9 +692,9 @@ a {
 }
 
 .db {
-  #p2 {
+  .p2 {
     font-weight: 200;
-    color: silver;
+    color: @color-pomegranate;
   }
   p {
     width: 90%;
@@ -891,6 +878,8 @@ a {
 }
 
 @media only screen and (max-width: 500px) {
+
+
   #main .header {
     .search-box {
       float: none;
@@ -922,15 +911,19 @@ a {
   }
 
   #main .infoside-list {
-    font-size: 10px;
+    text-align: left;
+
+    font-size: .5em;
     height: 500px;
   }
 
   #main .infoside-list li {
-    width: 5%;
+    width: 10%;
     position: float;
     float: left;
+
     button {
+      letter-spacing: 1px;
       width: 80%
     }
     .col-1 {
