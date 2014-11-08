@@ -8,15 +8,21 @@ FX Arbitrage
 
 
 This uses the bellman-ford algo. to identify instances for arbitrage amongst 18 of the most liquid currencies. 
+
 The cross-rates are queried via YQL and the shortest path is found using an edited networkx script that does not terminate on negative cycles.
+
 This is also my first attempt at building a live web application from the ground up. Any constructive criticism is welcome.
 
 Svica v1.1.2
 
--This project is no longer live.
--Fixed issue with Yahoo Pipes!RSS Feeds now work.
--CSS now reflects the static website on S3.
+!This project is no longer live!
+
 -The site is now strictly a client-side skeleton site. All live assets, except for the RSS feeds, are no longer functioning.
+
+-Fixed issue with Yahoo Pipes! RSS Feeds now work.
+
+-CSS now reflects the static website on S3.
+
 
 Svica v1.1.1
 
